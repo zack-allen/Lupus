@@ -12,6 +12,9 @@ import time
 from cryptography.fernet import Fernet
 import tkinter as tk
 from tkinter import messagebox
+from elevate import elevate
+
+elevate()
 
 # Generate a key for encryption and decryption
 def generate_key():
